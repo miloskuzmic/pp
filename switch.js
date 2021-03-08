@@ -234,16 +234,14 @@ Write a program that takes as input two numbers and a string denoting the operat
 ”, “*”, “/”) and prints out the appropriate result. Watch out for division by zero!
 */
 var number1 = 10;
-var number2 = 2;
+var number2 = 6;
 var operator = '/';
 switch (operator) {
     case '+':
     console.log (number1 + number2);
         break;
     case '/':
-        if (number2 !== 0){
-            console.log (number1 / number2);
-        }
+      (number2 !== 0) ? console.log (number1 / number2) : console.log ('Division by zero')
         break;
     case '-':
     console.log (number1 - number2);
