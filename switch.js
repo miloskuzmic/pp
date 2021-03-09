@@ -241,13 +241,12 @@ switch (operator) {
     console.log (number1 + number2);
         break;
     case '/':
-      (number2 !== 0) ? console.log (number1 / number2) : console.log ('Division by zero')
+      (number2 !== 0) ? console.log (number1 / number2) : console.log ('number2 can not be 0');
         break;
     case '-':
     console.log (number1 - number2);
         break;
     case '*':
         console.log (number1 * number2);
-    default:
-        break;
+  
 }
