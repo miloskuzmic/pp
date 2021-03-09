@@ -131,4 +131,33 @@ if (input1 === input2){
     var rez = (input1 + input2) * 3;
     console.log (rez);
 }
-// dovrsiti zadatak
+else {
+    console.log (input1 + input2);
+}
+/* 9. Write a JavaScript program to check two given numbers and print “true” if one of the number is 50 or if their sum is 50.
+	Sample Input: 5,54			Sample Input: 6,50			Sample Input: 40,10
+	Output : -				Output : true				Output : true
+*/
+var input1 = 5;
+var input2 = 54;
+if (input1 === 50 || input2 === 50 || input1 + input2 === 50){
+    console.log (true);
+}
+else {
+    console.log ('-');
+}
+/* 10.
+Write a JavaScript program to check a given integer is within 20 of 100 or 400, and print range in which number belongs.
+Sample Input: 13			Sample Input: 34			Sample Input: 256
+	Output : -				Output : 20 ⇔ 100			Output : 100 ⇔ 400
+*/
+var input = 34;
+if (20 < input && input < 100){
+    console.log ('20 <=> 100');
+}
+else if (100 < input && input < 400){
+    console.log ('100 <=> 400');
+}
+else {
+    console.log ('-');
+}
