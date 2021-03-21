@@ -101,6 +101,15 @@ if (b === true) {
 } else {
 	console.log('not simetric');
 }
+// Second method
+var arr = [2, 4, -2, 7, -2, 4, 2];
+var isSym = true;
+for (var start = 0, end = arr.length - 1; start < end; start++, end--) {
+	if (arr[start] !== arr[end]) {
+		isSym = false;
+	}
+}
+console.log(isSym)
 /* 7. Write a program that intertwines two arrays. You can assume the arrays are of the same
 length.
 Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
@@ -176,4 +185,15 @@ if (p>a.length){
 	console.log(x);
 }
 
-
+// Second method
+var a = [2, -2, 33, 12, 5, 8];
+var e = 78;
+var p = 3;
+var x = [];
+for (var i = 0; i<a.length; i++){
+	if(i === p){
+		x[p] = e;
+	}
+	x[x.length] = a[i];
+}
+console.log(x);
