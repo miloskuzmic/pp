@@ -63,22 +63,38 @@ console.log(hollowSquare(5));
 * * *
 * * * * * * *
 */
+function numberOfDots(a, b, c){
 var rez = '';
-for (var i =0; i === 0; i++){
-    for (var j =0; j <= 5; j++){
-        rez+='*';
+for (var i = 0; i === 0; i++){
+    for (var j = 0; j < a; j++){
+        rez+='*';   
     }
     rez+='\n';
-    for (var k =0; k <= 3; k++){
-        rez+='*';
+    for (var k = 0; k < b; k++){
+        rez+='*';  
     }
     rez+='\n';
-    for (var s =0; s <= 7; s++){
+    for (var s = 0; s < c; s++){
         rez+='*';
     }
     rez+='\n';
 }
-console.log(rez);
+return rez;
+}
+console.log(numberOfDots(5, 3, 7));
+//second method
+function makeChart(){
+    var rez = '';
+    for (var i = 0; i < arguments.length; i++){
+        for (var j = 0; j < arguments[i]; j++){
+            rez += '*';
+        }
+    rez += '\n';
+
+    }
+    return rez;
+}
+console.log(makeChart(6,7,8))
 // 7. Write a program that calculates a number of digits of a given number. 
 function numbOfDigits (a){
     var str = '' + a;
