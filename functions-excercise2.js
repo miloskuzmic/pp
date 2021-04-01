@@ -224,17 +224,38 @@ function redExcercise(n) {
     var str = '' + n;
     if (str >= 11 && str < 14) {
         str = str + 'th';
-    } else if (str[str.length - 1] == 2) {
+    } else if (str[str.length - 1] === 2) {
         str = str + 'nd';
-    } else if (str[str.length - 1] == 3) {
+    } else if (str[str.length - 1] === 3) {
         str = str + 'rd';
-    } else if (str[str.length - 1] == 1) {
+    } else if (str[str.length - 1] === 1) {
         str = str + 'st';
     } else {
         str = str + 'th';
     }
     return str;
 }
-console.log(redExcercise(100));
+console.log(redExcercise(211));
+//dario :
+function humanizeNumber(num) {
+    // if   (typeof num == "undefined") {   //ogradjivanje
+    // return;
+    //}
+    if (num % 100 >= 11 && num % 100 <= 13) {
+        return num + "th";
+    }
+    switch (num % 10) {
+        case 1:
+            return num + "st";
+        case 2:
+            return num + "nd";
+        case 3:
+            return num + "rd";
+    }
+    return num + "th";
+}
+
+console.log(humanizeNumber(200011));
+
 
 

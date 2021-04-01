@@ -10,7 +10,7 @@ function strInstr(originalString, insertString, pos) {
     }
     for (var i = 0; i < originalString.length; i++) {
         if (i !== pos) {
-            str += originalString[i]
+            str += originalString[i];
         } else {
             str += insertString;
             str += ' ';
@@ -27,27 +27,26 @@ function skipingElements(inputArray) {
     newString = '';
     for (var i = 0; i < inputArray.length; i++) {
         if (isNaN(inputArray[i]) || inputArray[i] === undefined || inputArray[i] === null || inputArray[i] === Infinity) {
-            // newString += inputArray[i];
+           
         } else {
             newString += inputArray[i];
         }
     }
     return newString;
 }
-console.log(skipingElements([NaN, 0, 15, false, -22, '', undefined, 47, null]))
-console.log(NaN === !!NaN)
+console.log(skipingElements([NaN, 0, 15, false, -22, '', undefined, 47, null]));
 /*3. Write a program to filter out falsy values from the array.
 
 [NaN, 0, 15, false, -22, '', undefined, 47, null] -> [15, -22, 47]
 */
-function falsyValues(array){
-newString = [];
-    for (var i = 0; i < array.length; i++){
-       if (array[i]){
-           newString[newString.length] = array[i]
-       }
+function falsyValues(array) {
+    newString = [];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i]) {
+            newString[newString.length] = array[i];
+        }
     }
-   return (newString.length === 0) ? 'All falsy values is in array' : newString
+    return (newString.length === 0) ? 'All falsy values is in array' : newString;
 }
 console.log(falsyValues([NaN, 0, 15, false, -22, '', undefined, 47, null]));
 
@@ -114,7 +113,7 @@ function isPerfect(num) {
             sum += i;
         }
     }
-    return (sum === num)
+    return (sum === num);
 }
 var num = 8128;
 console.log('Number ' + num + ' a perfect number ' + isPerfect(num));
@@ -123,79 +122,70 @@ console.log('Number ' + num + ' a perfect number ' + isPerfect(num));
 'The quick brown fox', 'fox' -> "'fox' was found 1 times"
 'aa bb cc dd aa', 'aa' -> "'aa' was found 2 times"
 */
-function findWord(sentance, word){
+function findWord(sentance, word) {
     var count = 0;
-     sentance += ' ';
+    sentance += ' ';
     var pom = '';
-    for (var i = 0; i < sentance.length; i++){
-        if (sentance[i] !== ' '){
-            pom += sentance[i];      
-        }else {
-            if (pom === word){
+    for (var i = 0; i < sentance.length; i++) {
+        if (sentance[i] !== ' ') {
+            pom += sentance[i];
+        } else {
+            if (pom === word) {
                 count++;
-            }else{
-                pom = ''
+            } else {
+                pom = '';
             }
         }
     }
-    return count
+    return count;
 }
-var string = 'aa bb cc dd aa'
-var word = 'aa'  
-console.log(word, 'was found ',findWord(string,word ), 'times');
+var string = 'aa bb cc dd aa';
+var word = 'aa';
+console.log(word, 'was found ', findWord(string, word), 'times');
 /* 9. Write a function to hide email address.
 
 "myemailaddress@bgit.rs" -> "mye...@bgit.rs"
 */
-function hideEmail(email){
-    str = '';
-    pom = '';
-    for (i = 0; i < email.length; i++){
-        if (i < 3 ){
+function hideEmail(email) {
+    var str = '';
+    var pom;
+    for (i = 0; i < email.length; i++) {
+        if (i < 3 || i > pom) {
             str += email[i];
-            pom = str;
-        }else if (email[i] === '@'){
-            pom += '...' + email[i]
-            str = pom;
-        }else{
-            str += email[i];
+        } else if (email[i] === '@') {
+            str += '...' + email[i];
+            pom = i;
         }
-
     }
-    return str
+    return str;
 }
-console.log(hideEmail('myemail@bgit.rs'))
+console.log(hideEmail('myemail@bgit.rs'));
 /* 10. Write a program to find the most frequent item of an array.
 
 [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]
 */
-function mostFrequent(array){
+function mostFrequent(array) {
     var pom = [];
     var numberOfsame = 1;
     var counter = 0
-    for (var i = 0; i < array.length; i++){
-      //  console.log('Vrednost i ', i);
-        for (var j = 1; j < array.length; j++){
-          //  console.log('Vrednost j ', j);
-            if(array[i] == array[j]){
-              //  console.log('Vrednost u array[i]',array[i],'Vrednost u array[j]', array[j] ,'Da li su jednaki',array[i] == array[j] )
+    for (var i = 0; i < array.length; i++) {
+       
+        for (var j = 1; j < array.length; j++) {
+           
+            if (array[i] == array[j]) {
                 counter++;
-              //  console.log('vrednost countera ', counter);
             }
-            if (numberOfsame < counter){
+            if (numberOfsame < counter) {
                 pom = array[i];
                 numberOfsame = counter;
-               // console.log('Vrednost numberOfsame ', numberOfsame, 'Vrednost counter',counter,'Da li su jednaki', numberOfsame < counter )
-              //  console.log('vrednost numberofsame', numberOfsame)
-               // console.log('Vrednost pomocne ', pom);
             }
         }
-    counter = 0;
+        counter = 0;
     }
-  //  console.log('Broj u numberOfsame', numberOfsame);
-    return pom
+    
+    return pom;
 }
-console.log(mostFrequent([3, 'a', 'a',5,6,7]));
+console.log(mostFrequent([3, 'a', 'a', 5, 6, 7]));
 
 
 

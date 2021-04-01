@@ -3,20 +3,19 @@ Find the min and max element in the following array and switch their places. Pri
 Input:  [ 3, 500, 12, 149, 53, 414, 1, 19 ]
 Output: [ 3, 1, 12, 149, 53, 414, 500, 19 ]*/
 function switchhMinMax(arr) {
-    var arr;
     var min = arr[0];
     var max = arr[0];
     var indMin;
     var indMax;
-    for (i = 1; i < arr.length; i++) {
+    for (var i = 1; i < arr.length; i++) {
         if (arr[i] < min) {
             min = arr[i];
             indMin = i;
-        }
-        if (arr[i] > max) {
+        }else if (arr[i] > max) {
             max = arr[i];
             indMax = i;
         }
+        
     }
     arr[indMin] = max;
     arr[indMax] = min;
@@ -174,11 +173,29 @@ console.log(combinatio());
 /*10.Write a program that checks if the entered number is a prime number (i.e. divisible only by 1 and by itself).
 Input:  17    | 15
 Output: true  | false*/
-
+function checkPrime(number){
+    var pom = true
+    for (var i = 2; i <= number; i++){
+        if ((number %i ) === 0 && number !== i){
+            pom = false;
+        }
+    }
+    return pom;
+}
+console.log('Number is prime ', checkPrime(17))
 /*11Check if a given string is a palindrome (spaces are ignored).
 Input:  eye  | Geek  | a nut for a jar of tuna
 Output: true | false | true*/
-
+function isPolindrome(str) {
+   var pom = true;
+    for (var i = 0; i < str.length; i++){
+        if (str[i] !== str[str.length -1 -i]){
+             pom= false;
+        }
+    }
+    return pom
+}
+console.log(isPolindrome('Geek'))
 
 /*12Write a program that calculates the greatest common divisor of two integers. Note: The greatest common divisor of two non-zero integers is the greatest positive number that divides both numbers with no remainder.
 Input:  192 42 | 81 9
