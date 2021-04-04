@@ -42,7 +42,7 @@ console.log(skipingElements([NaN, 0, 15, false, -22, '', undefined, 47, null]));
 function falsyValues(array) {
     newString = [];
     for (var i = 0; i < array.length; i++) {
-        if (array[i]) {
+        if (!!array[i]) {
             newString[newString.length] = array[i];
         }
     }

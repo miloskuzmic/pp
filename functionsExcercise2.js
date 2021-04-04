@@ -112,15 +112,14 @@ Note: A prime number (or a prime) is a natural number greater than 1 that has no
 divisors other than 1 and itself.*/
 function isPrime(a) {
     var j = true;
-    for (var i = 2; i < 10; i++) {
+    for (var i = 2; i <= a; i++) {
         if ((a % i) === 0 && a !== i) {
-            console.log(a, i);
             j = false;
         }
     }
     return j;
 }
-console.log(isPrime(7));
+console.log(isPrime(15));
 /*9. Write a function that replaces spaces in a string with provided separator. If separator is not provided, use “-” (dash) as the default separator.
 "My random string", "_" -> "My_random_string"
 "My random string", "+" -> "My+random+string"
@@ -183,7 +182,7 @@ function pension(birth, curent, gender) {
     }
 }
 console.log(pension(1989, 2021, 'men'));
-/*Write a function to humanize a number (formats a number to a human-readable string) with the correct suffix such as 1st, 2nd, 3rd or 4th.
+/* 13. Write a function to humanize a number (formats a number to a human-readable string) with the correct suffix such as 1st, 2nd, 3rd or 4th.
 1 -> 1st
 11 -> 11th
 */
