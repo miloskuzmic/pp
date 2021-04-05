@@ -70,7 +70,7 @@ function multiTable() {
             console.log(i, 'x', j, '=', rez, '\n');
         }
     }
-    
+
 }
 console.log(multiTable());
 //6. Write a function to input temperature in Centigrade and convert to Fahrenheit.
@@ -99,3 +99,44 @@ function maxElement(arr) {
     return pom;
 }
 console.log(maxElement([1, 2, 3, 4, 5, 'nesto']));
+/* 8. Write a function to find the maximum and minimum elements. Function returns an array.*/
+function maximunAndMinimu(arr) {
+    var min = arr[0];
+    var max = arr[0];
+    var arr1 = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    arr1[arr1.length] = max;
+    arr1[arr1.length] = min;
+    return arr1;
+}
+var arr = [2, 3, 4, 5, 78, 32, -1];
+console.log(maximunAndMinimu(arr));
+//9. Write a function to find the median element of array.
+//10. Write a function to find the element that occurs most frequently.
+function occursMost(array) {
+    var counter = 0;
+    var numberOfsame = 0;
+    var pom;
+    for (var i = 0; i < array.length; i++){
+        for (var j = 1; j < array.length; j++){
+            if (array[i] === array[j]){
+                counter++;
+            }
+            if (numberOfsame < counter){
+                pom = array[i];
+                numberOfsame = counter;
+            }
+        }
+        counter = 0;
+    }
+     return pom;
+}
+var array = [3, 'a', 'a', 5, 6, 7, 3, 3];
+console.log('Most occure element is ', occursMost(array));
