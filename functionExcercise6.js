@@ -119,24 +119,73 @@ function maximunAndMinimu(arr) {
 var arr = [2, 3, 4, 5, 78, 32, -1];
 console.log(maximunAndMinimu(arr));
 //9. Write a function to find the median element of array.
+function medianElement(array) {
+    var pom;
+    var index;
+    var median;
+    //sorting array
+    for (var i = 0; i < array.length; i++) {
+        for (var j = 1 + i; j < array.length; j++) {
+            if (array[i] > array[j]) {
+                pom = array[i];
+                array[i] = array[j];
+                array[j] = pom;
+            }
+        }
+    }
+    //finding median
+    if (array.length % 2 === 0) {
+        index = parseInt(array.length / 2);
+        median = (array[index] + array[index - 1]) / 2;
+    } else {
+        index = parseInt(array.length / 2);
+        median = array[index];
+    }
+    return median;
+}
+var array = [9, 8, 4, 5, 6, 1, 3, 2];
+console.log(medianElement(array));
 //10. Write a function to find the element that occurs most frequently.
 function occursMost(array) {
     var counter = 0;
     var numberOfsame = 0;
     var pom;
-    for (var i = 0; i < array.length; i++){
-        for (var j = 1; j < array.length; j++){
-            if (array[i] === array[j]){
+    for (var i = 0; i < array.length; i++) {
+        for (var j = 1; j < array.length; j++) {
+            if (array[i] === array[j]) {
                 counter++;
             }
-            if (numberOfsame < counter){
+            if (numberOfsame < counter) {
                 pom = array[i];
                 numberOfsame = counter;
             }
         }
         counter = 0;
     }
-     return pom;
+    return pom;
 }
 var array = [3, 'a', 'a', 5, 6, 7, 3, 3];
 console.log('Most occure element is ', occursMost(array));
+/* 11. Write a function to find and return the first, middle and last element of an array if the array
+has odd number of elements. If number of elements is even, return just the first and the
+last. In other cases (empty array), input array should be returned.*/
+function firstMiddleLast(array) {
+    var outputArray = [];
+    var pomIndex;
+    if (array.length % 2 === 0) {
+        outputArray[outputArray.length] = array[0];
+        outputArray[outputArray.length] = array[array.length - 1];
+    } else {
+        outputArray[outputArray.length] = array[0];
+        pomIndex = parseInt(array.length / 2);
+        outputArray[outputArray.length] = array[pomIndex];
+        outputArray[outputArray.length] = array[array.length - 1];
+    }
+    if (outputArray.length === 0) {
+        return array;
+    } else {
+        return outputArray;
+    }
+}
+var array = [1, 2, 3, 4];
+console.log(firstMiddleLast(array));
