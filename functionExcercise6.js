@@ -189,3 +189,111 @@ function firstMiddleLast(array) {
 }
 var array = [1, 2, 3, 4];
 console.log(firstMiddleLast(array));
+/* 12. Write a function to find the average of N elements. Make the function flexible to receive
+dynamic number or parameters.*/
+function averageNelements() {
+    var sum = 0;
+    var avr;
+    for (var i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+
+    }
+
+    avr = sum / arguments.length;
+    return avr;
+}
+var elemN = averageNelements(1, 2, 3, 4, 5);
+console.log(elemN);
+/*13. Write a function to find all the numbers greater than the average.*/
+function greaterThenAverage(array) {
+    var sum = 0;
+    var avr;
+    var arr = [];
+    for (var i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    avr = sum / array.length;
+    for (var j = 0; j < array.length; j++) {
+        if (array[j] > avr) {
+            arr[arr.length] = array[j];
+        }
+    }
+    return arr;
+}
+var array = [1, 2, 3, 4, 5];
+console.log(greaterThenAverage(array));
+/* 14. The body mass index (BMI) is the ratio of the weight of a person (in kilograms) to the
+square of the height (in meters). Write a function that takes two parameters, weight and
+height, computes the BMI, and prints the corresponding BMI category:
+● Starvation: less than 15
+● Anorexic: less than 17.5
+● Underweight: less than 18.5
+● Ideal: greater than or equal to 18.5 but less than 25
+● Overweight: greater than or equal to 25 but less than 30
+● Obese: greater than or equal to 30 but less than 40
+● Morbidly obese: greater than or equal to 40*/
+function bmi(weight, height) {
+    var rez = '';
+    var index = weight / (height * height);
+    if (index < 15) {
+        rez += 'Starvation';
+    } else if (index > 15 && index < 17.5) {
+        rez += 'Anorexic';
+    } else if (index > 17.5 && index < 18.5) {
+        rez += 'Underweight';
+    } else if (index >= 18.5 && index < 25) {
+        rez += 'Ideal';
+    } else if (index >= 25 && index < 30) {
+        rez += 'Overweight';
+    } else if (index >= 30 && index < 40) {
+        rez += 'Obese';
+    } else if (index >= 40) {
+        rez += 'Morbidly';
+    }
+    return rez;
+}
+console.log(bmi(58, 1.69));
+/* 15. Write a function that takes a list of strings and prints them, one per line, in a rectangular frame.:
+
+For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
+*********
+* Hello *
+* World *
+* in    *
+* a     *
+* frame *
+*********
+Dovrsite ovo za utorak
+*/
+function textInFrame(array) {
+    var maxLength = 0;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].length > maxLength) {
+            maxLength = array[i].length;
+        }
+    }
+    function writing(str, num) {
+        var rez = '';
+        for (var i = 0; i < num; i++) {
+            rez += str;
+        }
+        return rez;
+    }
+    maxChar = maxLength + 4;
+    var topAndBottom = writing('*', maxChar);
+    //middle part
+    var middle = '';
+    for (var i = 0; i < array.length; i++) {
+        var newLenght = maxLength - array[i].length;
+        var misingLenght = writing(' ', newLenght);
+         middle += '* ' + array[i] + misingLenght + ' *' + '\n';
+        
+        
+    }
+    
+    var final = topAndBottom +'\n' + middle + topAndBottom;
+
+    return final;
+}
+var array = ["Hello", "World", "in", "a", "frame"];
+console.log(textInFrame(array));
