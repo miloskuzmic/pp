@@ -6,7 +6,7 @@ Input:  e = 3, a = [5, -4.2, 18, 7]
 Output: no
 */
 function findeElement(arr, element) {
-    var b = 'no'
+    var b = 'no';
     for (var i = 0; i < arr.length; i++) {
         if (arr[i] === element) {
             b = 'yes';
@@ -19,13 +19,13 @@ console.log(findeElement([5, -4.2, 3, 7], 3))
 /* 2. Write a program that multiplies every positive element of a given array by 2.
 Input array: [-3, 11, 5, 3.4, -8]
 Output array: [-3, 22, 10, 6.8, -8]*/
-function multiplieOfelements(arr, multiplayer) {
+function multiplieOfelements(arr) {
     for (var i = 0; i < arr.length; i++) {
         if (arr[i] > 0) {
             arr[i] *= 2;
         }
     }
-    return arr
+    return arr;
 }
 console.log(multiplieOfelements([-3, 11, 5, 3.4, -8]))
 
@@ -57,9 +57,9 @@ function secondSmall(arr) {
         for (var j = 0; j < arr.length; j++)
             if (arr[i] < arr[j]) {
                 pom = arr[i];
-                arr[i] = arr[j]
-                arr[j] = pom
-                console.log(arr)
+                arr[i] = arr[j];
+                arr[j] = pom;
+                
             }
     }
     return arr[1];
@@ -91,20 +91,17 @@ function isSimetric(arr) {
     for (var i = 0; i < arr.length; i++) {
         var x = arr[arr.length - 1 - i];
         if (arr[i] === x) {
-            pom = true
+            pom = true;
         }
     }
     if (pom) {
-        return 'The array is symetric'
+        return 'The array is symetric';
     } else {
-        return 'The array is no\'t symetric'
+        return 'The array is no\'t symetric';
     }
 }
 console.log(isSimetric([2, 4, -2, 7, -2, 4, 2]));
-var arr = [1, 2, 3, 4, 5]
-for (var j = arr.length - 1; j >= 0; j--) {
-    console.log(arr[j]);
-}
+
 /*7.Write a program that intertwines two arrays. You can assume the arrays are of the same length.
 Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
 Output array: [4, 3, 5, 8, 6, 11, 2, 9]
@@ -115,7 +112,7 @@ function interwinesTwoArr(arr1, arr2) {
         arr3[arr3.length] = arr1[i];
         arr3[arr3.length] = arr2[i];
     }
-    return arr3
+    return arr3;
 }
 console.log(interwinesTwoArr([4, 5, 6, 2], [3, 8, 11, 9]));
 /* 8.Write a program that concatenates two arrays.
@@ -129,9 +126,9 @@ function concateTwoArr(arr, arr1) {
             arr2[j + arr.length] = arr1[j];
         }
     }
-    return arr2
+    return arr2;
 }
-console.log(concateTwoArr([4, 5, 6, 2], [3, 8, 11, 9]))
+console.log(concateTwoArr([4, 5, 6, 2], [3, 8, 11, 9]));
 /* 9.Write a program that deletes a given element e from the array a.
 Input: e = 2, a = [4, 6, 2, 8, 2, 2]
 Output array: [4, 6, 8]*/
@@ -144,7 +141,7 @@ function deleteGivenElement(arr, element) {
             j++;
         }
     }
-    return arr1
+    return arr1;
 }
 console.log(deleteGivenElement([4, 6, 2, 8, 2, 2], 2));
 /* 10. Write a program that inserts a given element e on the given position p in the array a. If the value of the position is greater than the array length, print the error message.
@@ -159,8 +156,8 @@ function InserElement(arr, position, element) {
             if (i === position) {
                 arr1[i] = element;
             }
-            arr1[arr1.length] = arr[i]
+            arr1[arr1.length] = arr[i];
         }
     } return arr1;
 }
-console.log(InserElement([2, -2, 33, 12, 5, 8], 3, 78))
+console.log(InserElement([2, -2, 33, 12, 5, 8], 3, 78));
