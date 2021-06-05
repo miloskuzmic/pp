@@ -142,7 +142,7 @@ WebApp.prototype.like = function() {
    return this.stars++;
 }
 WebApp.prototype.showStars = function() {
-    return console.log('Number of stars ' + this.stars);
+    return console.log('Number of stars: ' + this.stars);
 }
 var web = new WebApp('Google', 'google.rs', 'React', 'AA', 4);
 console.log('---WebApp---');
@@ -182,7 +182,7 @@ MobileApp.prototype.like = function() {
    return this.stars++;
 }
 MobileApp.prototype.showStars = function() {
-    console.log('Number of stars ' + this.stars);
+    console.log('Number of stars: ' + this.stars);
 }
 var mob = new MobileApp('Calculator', 'Android', 'CC', 4);
 console.log('---MobApp---');
