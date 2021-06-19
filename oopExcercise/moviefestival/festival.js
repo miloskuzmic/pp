@@ -29,6 +29,7 @@ function Program(date) {
         var lengthOfMovies = this.listOfMovies.map(function(el){
             return el.length;
         });
+        
         var total  = 0;
         lengthOfMovies.forEach(function(el){
             total = total + el;
@@ -57,7 +58,7 @@ var movie2 = new Movie('Neki film', action, 100)
 var program1 = new Program('20.12.2321');
 program1.addMovie(movie1);
 program1.addMovie(movie2);
-//console.log(program1.listOfMovies);
+console.log(program1.listOfMovies);
 console.log(program1.getData());
 //console.log(action.getData());
 //console.log(movie1.getData());
