@@ -150,7 +150,7 @@ const arrayOfPersons = [
     age: 26,
     },
     {name:'Milos',
-    age: 18,
+    age: 45,
     },
 ];
 let printPerson = (array) => {
@@ -165,14 +165,8 @@ let printPerson = (array) => {
 }
 
 let olderThan = (array) => {
-    let count = 0;
-    array.forEach(element =>{
-        if (element.age > 40) {
-           count++;
-        };
-        
-    });
-    console.log(`There is ${count} persons older than 40`)
+    let isOlder = array.some(e => e.age > 40)
+    return isOlder ? console.log('Yes')  : console.log('No')
 }
 let allOlder = (array) =>{
     let b = array.every(array => array.age > 20)
